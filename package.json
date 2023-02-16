@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server2.js",
+    "dev": "nodemon server3.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   }
 }
