@@ -6,7 +6,7 @@ const path = require("path");
 //a middleware that will pass in another middleware express.json()
 //expression.json() will listen for json, coming to the server as request body
 //and will parses the the request body and assigns it to a property in the request object named body
-
+//for every request method, it is going to parse the request body
 app.use(express.json());
 
 //morgan logs important information about the request
@@ -25,6 +25,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
+  //sending json data
+  //we can send res.end if we don't want to send any data back
   res.json({ message: "For the about page", query: req.query });
 });
 
@@ -36,7 +38,7 @@ app.post("/signup/:secret", (req, res) => {
   res.json({
     message: `${req.body.name}, Thank You for Signing Up!`,
     secret: req.params.secret
-  }); //Fariha
+  }); //Fariha, whatever is beside the url
 });
 
 app.listen(3000, () => console.log("Sever 3 is running"));
